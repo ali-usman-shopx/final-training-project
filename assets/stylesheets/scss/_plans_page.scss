@@ -34,33 +34,48 @@
         font: normal normal bold 16px/22px fonts.$roboto;
     }
 
-    .plan-card {
-        background-color: transparent;
-        padding: 0px;
-        position: relative;
+    #plan-cards-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow: wrap;
+        justify-content: space-evenly;
+    
+        .plan-card {
+            background-color: transparent;
+            padding: 0px;
+            position: relative;
+            width: 278px !important;
+            height: 309px !important;
+            margin-top: 34px;
 
-        .special-text-pill {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background-color: colors.$sharp-white-bg;
-            border-radius: 11px;
-            font-size: 14px;
-            color: colors.$alternate-text;
-        }
-
-        .top-img {
-            border-radius: 20px;
-        }
-
-        .card-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 20px;
-
-            .subtext {
+            .special-text-pill {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                padding: 0px 10px;
+                background-color: colors.$sharp-white-bg;
+                border-radius: 11px;
                 font-size: 14px;
-                font-weight: normal;
+                color: colors.$alternate-text;
+            }
+
+            .top-img {
+                border-radius: 20px;
+                width: 278px !important;
+                height: 209px !important;
+            }
+
+            .card-title {
+                font-size: 24px;
+                font-weight: bold;
+                margin-top: 20px;
+                margin-bottom: 2px;
+
+                .subtext {
+                    font-size: 14px;
+                    font-weight: normal;
+                }
             }
         }
     }

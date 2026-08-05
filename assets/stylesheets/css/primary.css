@@ -361,29 +361,43 @@
 .plans_section_container .accent-text {
   font: normal normal bold 16px/22px "Roboto", sans-serif;
 }
-.plans_section_container .plan-card {
+.plans_section_container #plan-cards-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: wrap;
+  justify-content: space-evenly;
+}
+.plans_section_container #plan-cards-container .plan-card {
   background-color: transparent;
   padding: 0px;
   position: relative;
+  width: 278px !important;
+  height: 309px !important;
+  margin-top: 34px;
 }
-.plans_section_container .plan-card .special-text-pill {
+.plans_section_container #plan-cards-container .plan-card .special-text-pill {
   position: absolute;
   top: 10px;
   left: 10px;
+  padding: 0px 10px;
   background-color: #FFFFFF;
   border-radius: 11px;
   font-size: 14px;
   color: #333333;
 }
-.plans_section_container .plan-card .top-img {
+.plans_section_container #plan-cards-container .plan-card .top-img {
   border-radius: 20px;
+  width: 278px !important;
+  height: 209px !important;
 }
-.plans_section_container .plan-card .card-title {
+.plans_section_container #plan-cards-container .plan-card .card-title {
   font-size: 24px;
   font-weight: bold;
   margin-top: 20px;
+  margin-bottom: 2px;
 }
-.plans_section_container .plan-card .card-title .subtext {
+.plans_section_container #plan-cards-container .plan-card .card-title .subtext {
   font-size: 14px;
   font-weight: normal;
 }
