@@ -1,0 +1,40 @@
+{
+    "plans": [
+        {
+            "id": 1,
+            "isSpecial": true,
+            "specialText": "Save upto 10$",
+            "mealsCount": 4,
+            "planPrice": 56,
+            "pricePerMeal": 11.59,
+            "img": "4_meals.png"
+        },
+        {
+            "id": 2,
+            "isSpecial": false,
+            "specialText": "",
+            "mealsCount": 6,
+            "planPrice": 84,
+            "pricePerMeal": 9.49,
+            "img": "6_meals.png"
+        },
+        {
+            "id": 3,
+            "isSpecial": false,
+            "specialText": "",
+            "mealsCount": 10,
+            "planPrice": 140,
+            "pricePerMeal": 8.99,
+            "img": "10_meals.png"
+        },
+        {
+            "id": 4,
+            "isSpecial": false,
+            "specialText": "",
+            "mealsCount": 12,
+            "planPrice": 168,
+            "pricePerMeal": 8.49,
+            "img": "12_meals.png"
+        }
+    ]
+}

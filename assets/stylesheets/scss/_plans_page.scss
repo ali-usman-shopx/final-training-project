@@ -1,1 +1,82 @@
 // plans_page.scss
+
+@use "colors";
+@use "grid";
+@use "fonts";
+
+.plans_section_container {
+    background-color: colors.$main_bg;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    text-align: center;
+
+    * {
+        height: fit-content;
+    }
+
+    .branding-row {
+        margin-top: 19px;
+    }
+
+    .branding-text {
+        margin-top: 20px;
+        font-size: 36px;
+        color: colors.$alternate-text;
+    }
+
+    .plans-info {
+        font-size: 16px;
+        margin-top: 11px;
+    }
+
+    .accent-text {
+        font: normal normal bold 16px/22px fonts.$roboto;
+    }
+
+    .plan-card {
+        background-color: transparent;
+        padding: 0px;
+        position: relative;
+
+        .special-text-pill {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: colors.$sharp-white-bg;
+            border-radius: 11px;
+            font-size: 14px;
+            color: colors.$alternate-text;
+        }
+
+        .top-img {
+            border-radius: 20px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+
+            .subtext {
+                font-size: 14px;
+                font-weight: normal;
+            }
+        }
+    }
+
+    @media (max-width: grid.$breakpoint-lg) {
+        .branding-row {
+            margin-top: 30px;
+        }
+
+        .branding-text {
+            margin-top: 30px;
+        }
+        
+        .plans-info {
+            font-size: 18px;
+            margin-top: 9px;
+        }
+    }
+}

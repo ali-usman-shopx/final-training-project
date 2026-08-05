@@ -4,7 +4,15 @@
 @use "plans_page";
 @use "reset";
 @use "fonts";
+@use "colors";
 
 .page {
     font-family: fonts.$roboto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.accent-text {
+    color: colors.$accent-text;
 }
