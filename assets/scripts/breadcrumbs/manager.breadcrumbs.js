@@ -38,8 +38,8 @@ const pageValidators = {
 
 const validatePage = function(path) {
     const current = path.split("/").pop();
-    console.log(current);
-    console.log(pageValidators["day.html"]);
+    // console.log(current);
+    // console.log(pageValidators["day.html"]);
     return pageValidators[current]();
 }
 
