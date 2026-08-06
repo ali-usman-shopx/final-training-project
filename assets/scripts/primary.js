@@ -1,21 +1,29 @@
 
 import wireBreadcrumbs from "./breadcrumbs/wirer.breadcrumbs.js";
-import generateAndAttachPlanCards from "./plans/wirer.plancards.js";
+import {generateAndAttachPlanCards, wireGetStartedButton} from "./plans/wirer.plancards.js";
 import managerPlans from "./plans/manager.plans.js";
+import {pages} from "./breadcrumbs/manager.breadcrumbs.js"
 
 const initializeBreadcrumbs = function() {
     wireBreadcrumbs();
 }
 
-const initializePlanCards = function() {
+const initializePlanCards = async function() {
+    await managerPlans.loadPlans();
     generateAndAttachPlanCards();
 }
 
-async function initialize() {
-    await managerPlans.loadPlans();
+const initializePlansPage = async function() {
+    if (pages.PLANS !== window.location.href.split("/").pop()) return;
 
+    await initializePlanCards();
+    wireGetStartedButton();
+}
+
+async function initialize() {
     initializeBreadcrumbs();
-    initializePlanCards();
+
+    await initializePlansPage();
 }
 
 document.addEventListener("DOMContentLoaded", () => {

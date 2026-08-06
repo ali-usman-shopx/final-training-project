@@ -2,29 +2,44 @@
 import sessionManager from "../storage/manager.storage.session.js";
 
 const pages = {
+    PLANS: "index.html",
     DAY: "day.html",
     MEALS: "meals.html",
     CHECKOUT: "checkout.html"
 };
 
+const nextPages = {
+    [pages.PLANS]: pages.DAY,
+    [pages.DAY]: pages.MEALS,
+    [pages.MEALS]: pages.CHECKOUT,
+    [pages.CHECKOUT]: pages.PLANS
+};
+
 const pageValidators = {
+    [pages.PLANS]: () => true,
+
     [pages.DAY]: function() {
-        return sessionManager.getPlan() == true;
+        const val = sessionManager.getPlan();
+        return (val != null && val != undefined);
     },
 
     [pages.MEALS]: function() {
-        return (this[pages.DAY]() && sessionManager.getDeliveryDay()) == true;
+        const val = sessionManager.getDeliveryDay();
+        const isThisValid = val != null && val != undefined;
+        return (this[pages.DAY]() && isThisValid) == true;
     },
 
     [pages.CHECKOUT]: function() {
-        return (this[pages.MEALS]() && sessionManager.getMeals()) == true;
+        const val = sessionManager.getMeals();
+        const isThisValid = val != null && val != undefined;
+        return (this[pages.MEALS]() && isThisValid) == true;
     }
 };
 
 const validatePage = function(path) {
     const current = path.split("/").pop();
-    // console.log(current);
-    // console.log(pageValidators["day.html"]);
+    console.log(current);
+    console.log(pageValidators["day.html"]);
     return pageValidators[current]();
 }
 
@@ -48,4 +63,15 @@ const configureBreadcrumbs = function(breadcrumbs) {
     });
 };
 
-export {configureBreadcrumbs};
+const navigateToNextPage = function() {
+    let location = window.location.href.split("/");
+    const current = location.pop();
+    const nextPage = nextPages[current];
+
+    if (validatePage(nextPage) != true) return;
+    
+    location.push(nextPage);
+    window.location.href = location.join("/");
+}
+
+export {configureBreadcrumbs, navigateToNextPage, pages};

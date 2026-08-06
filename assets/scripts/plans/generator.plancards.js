@@ -1,5 +1,6 @@
 
 import managerPlans from "./manager.plans.js";
+import {navigateToNextPage} from "../breadcrumbs/manager.breadcrumbs.js";
 
 class PlanCardGenerator {
 
@@ -41,6 +42,11 @@ class PlanCardGenerator {
         card.appendChild(title);
         card.appendChild(body);
 
+        card.addEventListener("click", () => {
+            managerPlans.selectPlan(plan.id);
+            navigateToNextPage();
+        });
+
         return card;
     }
 
@@ -52,14 +58,3 @@ class PlanCardGenerator {
 }
 
 export default PlanCardGenerator;
-
-// static async generateAllCards() {
-//         let plans;
-//         managerPlans.loadPlans().then(
-//             () => {
-//                 plans = managerPlans.getPlans();
-//                 plans = plans.map(plan => this.generate(plan));
-//             }
-//         );
-//         return plans;
-//     }

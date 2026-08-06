@@ -1,24 +1,15 @@
 
 import PlanCardGenerator from "./generator.plancards.js";
+import { navigateToNextPage } from "../breadcrumbs/manager.breadcrumbs.js";
 
 const generateAndAttachPlanCards = function() {
     let element = document.getElementById("plan-cards-container");
     element.append(...PlanCardGenerator.generateAllCards());
 }
 
-export default generateAndAttachPlanCards;
+const wireGetStartedButton = function() {
+    let element = document.getElementById("get-started-button");
+    element.addEventListener("click", () => {navigateToNextPage()});
+}
 
-// const generateAndAttachPlanCards = function() {
-//     let element = document.getElementById("plan-cards-container");
-    
-//     PlanCardGenerator.generateAllCards().then(
-//         (plans) => {
-//             plans.forEach(plan => {
-//                 element.appendChild(
-//                     plan
-//                 )
-//             });
-//         }
-//     );
-// }
-
+export {generateAndAttachPlanCards, wireGetStartedButton};

@@ -608,6 +608,7 @@
   position: relative;
   width: clamp(167px, 22vw, 278px);
   margin-top: 34px;
+  cursor: pointer;
 }
 .plans_section_container #plan-cards-container .plan-card .special-text-pill {
   position: absolute;
