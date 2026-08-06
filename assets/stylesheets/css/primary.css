@@ -762,6 +762,7 @@
   background-color: #FFFFFF;
   text-align: left;
   transition: transform 0.3s ease-out;
+  cursor: pointer;
 }
 .day_section_container #day_selector .day_element .date_info {
   font: normal normal 500 14px/19px "Roboto", sans-serif;

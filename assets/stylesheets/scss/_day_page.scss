@@ -39,6 +39,7 @@
             background-color: colors.$sharp-white-bg;
             text-align: left;
             transition: transform 0.3s ease-out;
+            cursor: pointer;
 
             .date_info {
                 font: normal normal 500 14px/19px fonts.$roboto;
