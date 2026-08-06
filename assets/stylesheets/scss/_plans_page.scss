@@ -52,8 +52,8 @@
             background-color: transparent;
             padding: 0px;
             position: relative;
-            width: clamp(167px, 22vw, 278px) !important;
-            height: clamp(216px, 25vw, 309px) !important;
+            width: clamp(167px, 22vw, 278px);
+            // height: clamp(216px, 25vw, 309px);
             margin-top: 34px;
 
             .special-text-pill {
@@ -70,6 +70,7 @@
             .top-img {
                 border-radius: 20px;
                 width: 100% !important;
+                aspect-ratio: 278 / 209;
                 object-fit: cover;
                 transition: transform 0.35s linear,
                             filter 0.35s linear;
@@ -146,7 +147,7 @@
         width: 390px;
     }
 
-    @media (max-width: grid.$breakpoint-lg) {
+    @media (max-width: grid.$breakpoint-md) {
         .branding-row {
             margin-top: 30px;
         }
@@ -187,6 +188,30 @@
         }
         .get-started-button:hover {
             width: 342px; // TODO this is slightly shorter than plan cards container (make container narrower)
+        }
+    }
+
+    @media (max-width: grid.$breakpoint-lg) {
+        #plan-cards-container {
+            justify-content: center;
+            column-gap: 15px;
+        }
+
+        .plan-card {
+            width: 38% !important;
+        }
+
+        .shipping-info {
+            margin-top: 40px;
+        }
+
+        .get-started-button {
+            width: 78%;
+            transition: none;
+            margin-bottom: 36px;
+        }
+        .get-started-button:hover {
+            width: 78%;
         }
     }
 }

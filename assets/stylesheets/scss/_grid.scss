@@ -3,9 +3,10 @@
 
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
-$breakpoint-lg: 992px;
+$breakpoint-xmd: 992px;
+$breakpoint-lg: 1025px;
 $breakpoint-xl: 1200px;
-$breakpoint-xxl: 1400px;
+$breakpoint-xxl: 1700px;
 
 .grid {
     display: grid;
@@ -42,6 +43,62 @@ $breakpoint-xxl: 1400px;
 .offset-10 { grid-column-start: 11; }
 .offset-11 { grid-column-start: 12; }
 
+@media (min-width: $breakpoint-md) {
+    .col-md-1  { grid-column-end: span 1; }
+    .col-md-2  { grid-column-end: span 2; }
+    .col-md-3  { grid-column-end: span 3; }
+    .col-md-4  { grid-column-end: span 4; }
+    .col-md-5  { grid-column-end: span 5; }
+    .col-md-6  { grid-column-end: span 6; }
+    .col-md-7  { grid-column-end: span 7; }
+    .col-md-8  { grid-column-end: span 8; }
+    .col-md-9  { grid-column-end: span 9; }
+    .col-md-10 { grid-column-end: span 10; }
+    .col-md-11 { grid-column-end: span 11; }
+    .col-md-12 { grid-column-end: span 12; }
+
+    .offset-md-0  { grid-column-start: 1; }
+    .offset-md-1  { grid-column-start: 2; }
+    .offset-md-2  { grid-column-start: 3; }
+    .offset-md-3  { grid-column-start: 4; }
+    .offset-md-4  { grid-column-start: 5; }
+    .offset-md-5  { grid-column-start: 6; }
+    .offset-md-6  { grid-column-start: 7; }
+    .offset-md-7  { grid-column-start: 8; }
+    .offset-md-8  { grid-column-start: 9; }
+    .offset-md-9  { grid-column-start: 10; }
+    .offset-md-10 { grid-column-start: 11; }
+    .offset-md-11 { grid-column-start: 12; }
+}
+
+@media (min-width: $breakpoint-xmd) {
+    .col-xmd-1  { grid-column-end: span 1; }
+    .col-xmd-2  { grid-column-end: span 2; }
+    .col-xmd-3  { grid-column-end: span 3; }
+    .col-xmd-4  { grid-column-end: span 4; }
+    .col-xmd-5  { grid-column-end: span 5; }
+    .col-xmd-6  { grid-column-end: span 6; }
+    .col-xmd-7  { grid-column-end: span 7; }
+    .col-xmd-8  { grid-column-end: span 8; }
+    .col-xmd-9  { grid-column-end: span 9; }
+    .col-xmd-10 { grid-column-end: span 10; }
+    .col-xmd-11 { grid-column-end: span 11; }
+    .col-xmd-12 { grid-column-end: span 12; }
+
+    .offset-xmd-0  { grid-column-start: 1; }
+    .offset-xmd-1  { grid-column-start: 2; }
+    .offset-xmd-2  { grid-column-start: 3; }
+    .offset-xmd-3  { grid-column-start: 4; }
+    .offset-xmd-4  { grid-column-start: 5; }
+    .offset-xmd-5  { grid-column-start: 6; }
+    .offset-xmd-6  { grid-column-start: 7; }
+    .offset-xmd-7  { grid-column-start: 8; }
+    .offset-xmd-8  { grid-column-start: 9; }
+    .offset-xmd-9  { grid-column-start: 10; }
+    .offset-xmd-10 { grid-column-start: 11; }
+    .offset-xmd-11 { grid-column-start: 12; }
+}
+
 @media (min-width: $breakpoint-lg) {
     .col-lg-1  { grid-column-end: span 1; }
     .col-lg-2  { grid-column-end: span 2; }
@@ -68,4 +125,32 @@ $breakpoint-xxl: 1400px;
     .offset-lg-9  { grid-column-start: 10; }
     .offset-lg-10 { grid-column-start: 11; }
     .offset-lg-11 { grid-column-start: 12; }
+}
+
+@media (min-width: $breakpoint-xxl) {
+    .col-xxl-1  { grid-column-end: span 1; }
+    .col-xxl-2  { grid-column-end: span 2; }
+    .col-xxl-3  { grid-column-end: span 3; }
+    .col-xxl-4  { grid-column-end: span 4; }
+    .col-xxl-5  { grid-column-end: span 5; }
+    .col-xxl-6  { grid-column-end: span 6; }
+    .col-xxl-7  { grid-column-end: span 7; }
+    .col-xxl-8  { grid-column-end: span 8; }
+    .col-xxl-9  { grid-column-end: span 9; }
+    .col-xxl-10 { grid-column-end: span 10; }
+    .col-xxl-11 { grid-column-end: span 11; }
+    .col-xxl-12 { grid-column-end: span 12; }
+
+    .offset-xxl-0  { grid-column-start: 1; }
+    .offset-xxl-1  { grid-column-start: 2; }
+    .offset-xxl-2  { grid-column-start: 3; }
+    .offset-xxl-3  { grid-column-start: 4; }
+    .offset-xxl-4  { grid-column-start: 5; }
+    .offset-xxl-5  { grid-column-start: 6; }
+    .offset-xxl-6  { grid-column-start: 7; }
+    .offset-xxl-7  { grid-column-start: 8; }
+    .offset-xxl-8  { grid-column-start: 9; }
+    .offset-xxl-9  { grid-column-start: 10; }
+    .offset-xxl-10 { grid-column-start: 11; }
+    .offset-xxl-11 { grid-column-start: 12; }
 }
