@@ -76,6 +76,12 @@
         }
     }
 
+    @media (max-width: grid.$breakpoint-lg) {
+        .accordion {
+            width: 100% !important;
+        }
+    }
+
     @media (max-width: grid.$breakpoint-md) {
         .qa_banner_text {
             font-size: 30px;
@@ -94,12 +100,6 @@
                     margin-right: 4% !important;
                 }
             }
-        }
-    }
-
-    @media (max-width: grid.$breakpoint-lg) {
-        .accordion {
-            width: 100% !important;
         }
     }
 }

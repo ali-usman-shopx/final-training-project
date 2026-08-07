@@ -908,6 +908,11 @@
 .qa_section_container #qa_accordion_wrapper .accordion .accordion_element .accordion_body {
   display: none;
 }
+@media (max-width: 1025px) {
+  .qa_section_container .accordion {
+    width: 100% !important;
+  }
+}
 @media (max-width: 768px) {
   .qa_section_container .qa_banner_text {
     font-size: 30px;
@@ -921,11 +926,6 @@
   .qa_section_container .accordion .accordion_element .accordion_body {
     margin-left: 4% !important;
     margin-right: 4% !important;
-  }
-}
-@media (max-width: 1025px) {
-  .qa_section_container .accordion {
-    width: 100% !important;
   }
 }
 
