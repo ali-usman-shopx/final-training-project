@@ -10,6 +10,9 @@ import {pages} from "./breadcrumbs/manager.breadcrumbs.js";
 
 import { generateAndAttachDeliverDayOptions, calculateAvailableDays, wireDeliveryDaySelectButton } from "./day/wirer.day.js";
 
+import { generateAndAttachMealCards, wireCartCardGenerationToCartUpdateEvent } from "./meals/wirer.meals.js";
+import managerMeals from "./meals/manager.meals.js";
+
 const initializeBreadcrumbs = function() {
     wireBreadcrumbs();
 }
@@ -45,12 +48,30 @@ const initializeDayPage = async function() {
     await initializeAccordionQA();
 }
 
+const initializeMealCards = async function() {
+    await managerMeals.loadMeals();
+    generateAndAttachMealCards();
+}
+
+const initializeCartCards = function() {
+    wireCartCardGenerationToCartUpdateEvent();
+}
+
+const initializeMealsPage = async function() {
+    if (pages.MEALS !== window.location.href.split("/").pop()) return;
+
+    await initializeMealCards();
+    initializeCartCards();
+}
+ 
 async function initialize() {
     initializeBreadcrumbs();
 
     await initializePlansPage();
 
     await initializeDayPage();
+
+    await initializeMealsPage();
 }
 
 document.addEventListener("DOMContentLoaded", () => {

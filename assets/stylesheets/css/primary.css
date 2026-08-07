@@ -876,6 +876,7 @@
   margin-left: 2%;
   margin-right: 2%;
   padding-top: 3px;
+  font: normal normal normal 16px/25px "Roboto", sans-serif;
 }
 .qa_section_container #qa_accordion_wrapper .accordion .accordion_element .accordion_head {
   display: flex;
@@ -884,7 +885,7 @@
   align-items: center;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #C7C8C9;
+  border-bottom: 1px solid #DFDDD8;
   height: 77px;
   width: 100%;
   font: normal normal 500 16px/21px "Roboto", sans-serif;
@@ -906,7 +907,6 @@
 }
 .qa_section_container #qa_accordion_wrapper .accordion .accordion_element .accordion_body {
   display: none;
-  font: normal normal 300 16px/21px "Roboto", sans-serif;
 }
 @media (max-width: 768px) {
   .qa_section_container .qa_banner_text {
@@ -923,10 +923,20 @@
     margin-right: 4% !important;
   }
 }
+@media (max-width: 1025px) {
+  .qa_section_container .accordion {
+    width: 100% !important;
+  }
+}
 
 .dividing_rule_wrapper {
   margin-top: 60px;
   margin-bottom: 60px;
+}
+.dividing_rule_wrapper hr {
+  border: none;
+  height: 1px;
+  background-color: #C7C8C9;
 }
 
 @media (max-width: 768px) {

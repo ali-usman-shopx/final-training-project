@@ -1,0 +1,92 @@
+{
+    "meals": [
+        {
+            "id": 1,
+            "name": "Mix Veggies",
+            "special_ingredients": "Cabbage, Carrots & Chicken",
+            "tag": "Glutten Free",
+            "calories": 560,
+            "carbs": 35,
+            "protiens": 46,
+            "is_premium_meal": false,
+            "img": "1.png"
+        },
+        {
+            "id": 2,
+            "name": "Protein-Packed Chicken Salad",
+            "special_ingredients": "Fruits & Seeds",
+            "tag": "Glutten Free",
+            "calories": 560,
+            "carbs": 35,
+            "protiens": 46,
+            "is_premium_meal": false,
+            "img": "2.png"
+        },
+        {
+            "id": 3,
+            "name": "Super-Grain Snacks Bowl",
+            "special_ingredients": "Avocado & Veggies",
+            "tag": "Glutten Free",
+            "calories": 560,
+            "carbs": 35,
+            "protiens": 46,
+            "is_premium_meal": true,
+            "img": "3.png"
+        },
+        {
+            "id": 4,
+            "name": "Stir Fried Rice Noodles Bowl",
+            "special_ingredients": "Mushroom & Spanish Pepper",
+            "tag": "Glutten Free",
+            "calories": 560,
+            "carbs": 35,
+            "protiens": 46,
+            "is_premium_meal": false,
+            "img": "4.png"
+        },
+        {
+            "id": 5,
+            "name": "Cauliflower Pilaf",
+            "special_ingredients": "Chickpea & Cheese",
+            "tag": "Glutten Free",
+            "calories": 560,
+            "carbs": 35,
+            "protiens": 46,
+            "is_premium_meal": false,
+            "img": "5.png"
+        },
+        {
+            "id": 6,
+            "name": "Keto-Friendly Pasta Bowl",
+            "special_ingredients": "Tina & Spanish",
+            "tag": "Glutten Free",
+            "calories": 560,
+            "carbs": 35,
+            "protiens": 46,
+            "is_premium_meal": false,
+            "img": "6.png"
+        },
+        {
+            "id": 7,
+            "name": "Vegetable Soup Bowl",
+            "special_ingredients": "Chicken & Sweet Kabu",
+            "tag": "Glutten Free",
+            "calories": 560,
+            "carbs": 35,
+            "protiens": 46,
+            "is_premium_meal": false,
+            "img": "7.png"
+        },
+        {
+            "id": 8,
+            "name": "Kashmiri Rice",
+            "special_ingredients": "Chicken & Coconut",
+            "tag": "Glutten Free",
+            "calories": 560,
+            "carbs": 35,
+            "protiens": 46,
+            "is_premium_meal": false,
+            "img": "8.png"
+        }
+    ]
+}

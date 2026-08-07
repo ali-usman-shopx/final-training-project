@@ -9,6 +9,12 @@
 .dividing_rule_wrapper {
     margin-top: 60px;
     margin-bottom: 60px;
+
+    hr {
+        border: none;
+        height: 1px;
+        background-color: colors.$gray;
+    }
 }
 
 @media (max-width: grid.$breakpoint-md) {

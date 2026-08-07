@@ -34,8 +34,8 @@
                         margin-left: 2%;
                         margin-right: 2%;
                         padding-top: 3px;
+                        font: normal normal normal 16px/25px fonts.$roboto;
                     }
-
                 }
 
                 .accordion_head {
@@ -45,7 +45,7 @@
                     align-items: center;
                     background-color: transparent;
                     border: none;
-                    border-bottom: 1px solid colors.$gray;
+                    border-bottom: 1px solid #DFDDD8;
                     height: 77px;
                     width: 100%;
                     font: normal normal 500 16px/21px fonts.$roboto;
@@ -71,7 +71,6 @@
 
                 .accordion_body {
                     display: none;
-                    font: normal normal 300 16px/21px fonts.$roboto;
                 }
             }
         }
@@ -95,6 +94,12 @@
                     margin-right: 4% !important;
                 }
             }
+        }
+    }
+
+    @media (max-width: grid.$breakpoint-lg) {
+        .accordion {
+            width: 100% !important;
         }
     }
 }
