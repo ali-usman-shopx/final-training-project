@@ -22,6 +22,13 @@ class DayElementGenerator {
 
         element.appendChild(dateInfo);
 
+        if (index === 0) {
+            (() => {
+                const soonest_date_element = document.getElementById("soonest_delivery_date");
+                soonest_date_element.append(dateInfo.cloneNode(true));
+            })();
+        }
+
         if (day.mostPopular) {
             const tag = document.createElement("div");
             tag.classList.add("most_popular_tag");

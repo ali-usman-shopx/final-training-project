@@ -1,0 +1,100 @@
+
+@use "colors";
+@use "fonts";
+@use "grid";
+
+.qa_section_container {
+    margin-bottom: 316px;
+
+    .qa_banner_text {
+        font: normal normal 500 48px/63px fonts.$roboto;
+        text-align: center;
+        color: colors.$alternate_text;
+    }
+
+    #qa_accordion_wrapper {
+        margin-top: 38px;
+        display: flex;
+        justify-content: center;
+        
+        .accordion {
+            width: 84%;
+            .accordion_element {
+                &.open {
+                    .accordion_head {
+                        color: colors.$accent-text;
+
+                        .accordion_arrow {
+                            transform: rotateZ(180deg);
+                        }
+                    }
+
+                    .accordion_body {
+                        display: block;
+                        margin-left: 2%;
+                        margin-right: 2%;
+                        padding-top: 3px;
+                    }
+
+                }
+
+                .accordion_head {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 1px solid colors.$gray;
+                    height: 77px;
+                    width: 100%;
+                    font: normal normal 500 16px/21px fonts.$roboto;
+                    cursor: pointer;
+                    padding: 0px;
+
+                    * {
+                        margin: 0px;
+                    }
+
+                    .accordion_arrow {
+                        width: 26px;
+                        height: 26px;
+                        flex-shrink: 0;
+
+                        fill: none;
+                        stroke: colors.$accent_text;
+                        stroke-width: 3;
+                        stroke-linecap: round;
+                        stroke-linejoin: round;
+                    }
+                }
+
+                .accordion_body {
+                    display: none;
+                    font: normal normal 300 16px/21px fonts.$roboto;
+                }
+            }
+        }
+    }
+
+    @media (max-width: grid.$breakpoint-md) {
+        .qa_banner_text {
+            font-size: 30px;
+        }
+
+        #qa_accordion_wrapper {
+            margin-top: 30px;
+        }
+
+        .accordion {
+            width: 90% !important;
+
+            .accordion_element {
+                .accordion_body {
+                    margin-left: 4% !important;
+                    margin-right: 4% !important;
+                }
+            }
+        }
+    }
+}
