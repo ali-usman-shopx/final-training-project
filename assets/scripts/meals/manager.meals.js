@@ -85,6 +85,11 @@ class Manager {
         this.#notifyUpdate();
     }
 
+    clearCart() {
+        this.#cart = [];
+        this.#notifyUpdate();
+    }
+
     finalizeCart() {
         if (this.#cart.length !== this.#mealsNeeded) throw new Error(`Plan's Required Number of Meals Not Selected! ${this.#cart.length} vs ${this.#mealsNeeded}`);
 

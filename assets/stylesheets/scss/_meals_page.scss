@@ -1,1 +1,11 @@
-@use "meals_section"
+@use "meals_section";
+@use "cart_section";
+
+.meals_page_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    height: calc(100vh - 50px);
+    min-height: 0;
+}

@@ -10,7 +10,15 @@ import {pages} from "./breadcrumbs/manager.breadcrumbs.js";
 
 import { generateAndAttachDeliverDayOptions, calculateAvailableDays, wireDeliveryDaySelectButton } from "./day/wirer.day.js";
 
-import { generateAndAttachMealCards, wireCartCardGenerationToCartUpdateEvent } from "./meals/wirer.meals.js";
+import {
+    generateAndAttachMealCards,
+    wireCartCardGenerationToCartUpdateEvent,
+    wireClearCart,
+    wireCartSummaryGeneration,
+    invokeCartSummaryGeneration,
+    loadDeliveryDate,
+    wireNextButton
+} from "./meals/wirer.meals.js";
 import managerMeals from "./meals/manager.meals.js";
 
 const initializeBreadcrumbs = function() {
@@ -55,6 +63,10 @@ const initializeMealCards = async function() {
 
 const initializeCartCards = function() {
     wireCartCardGenerationToCartUpdateEvent();
+    wireClearCart();
+    wireCartSummaryGeneration();
+    invokeCartSummaryGeneration();
+    loadDeliveryDate();
 }
 
 const initializeMealsPage = async function() {
@@ -62,6 +74,7 @@ const initializeMealsPage = async function() {
 
     await initializeMealCards();
     initializeCartCards();
+    wireNextButton();
 }
  
 async function initialize() {

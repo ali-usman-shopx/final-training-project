@@ -38,11 +38,51 @@
 
     <!-- Page Content -->
     <main class="meals_page_container">
-        <div class="">
-
-        </div>
         <div id="meals_section_container">
 
+        </div>
+        <div id="cart_section_container">
+            <div class="header">
+                <span class="delivery_info">
+                    My delivery for: <span id="date">DUMMY DATE</span>
+                </span>
+                <span id="clear_all">
+                    Clear all
+                </span>
+            </div>
+            <div class="body">
+                <div id="cart_cards_container"></div>
+                <div id="order_summary" class="inactive">
+                    <div class="title">Order Summary</div>
+                    <div class="meals_info">
+                        <span id="count">3 Meals</span>
+                        <span id="amount">0</span>
+                    </div>
+                    <div class="total">
+                        <span>Subtotal</span>
+                        <span id="subtotal">0</span>
+                    </div>
+                    <div class="tax_info">Tax and shipping calculated at checkout</div>
+                </div>
+            </div>
+            <div class="footer">
+                <div id="cart_row">
+                    <span>
+                        Subtotal
+                        <span id="subtotal">0</span>
+                    </span>
+                    <span id="cart_pill">
+                        <img id="cart_icon" src="./assets/images/icons/cart.svg" />
+                        <span id="cart_count">0</span>
+                    </span>
+                </div>
+                <button id="next_button">Next</button>
+                <div id="instruction_text">
+                    <span id="instruction">Please add</span>
+                    <span id="over_under_amount">n more</span>
+                    <span id="remaining_text">meals.</span>
+                </div>
+            </div>
         </div>
     </main>
 </body>

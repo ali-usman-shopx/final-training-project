@@ -17,6 +17,7 @@ class MealCardGenerator {
 
         if (meal.is_premium_meal) {
             card.classList.add("premium");
+            card.append(this.#generatePremiumItemTag(meal));
         }
 
         card.append(
@@ -25,6 +26,13 @@ class MealCardGenerator {
         );
 
         return card;
+    }
+
+    static #generatePremiumItemTag(meal) {
+        const tag = document.createElement("span");
+        tag.classList.add("premium_tag");
+        tag.textContent = (meal.premium_tag > 0) ? "+ $" + meal.premium_tag : "- $" + Math.abs(meal.premium_tag);
+        return tag;
     }
 
     static #generateImage(meal) {
@@ -50,7 +58,7 @@ class MealCardGenerator {
     }
 
     static #generateTitle(meal) {
-        const title = document.createElement("h3");
+        const title = document.createElement("span");
         title.classList.add("title");
         title.textContent = meal.name;
 
@@ -58,7 +66,7 @@ class MealCardGenerator {
     }
 
     static #generateIngredients(meal) {
-        const ingredients = document.createElement("p");
+        const ingredients = document.createElement("span");
         ingredients.classList.add("special_ingredients");
         ingredients.textContent = "with " + meal.special_ingredients;
 
