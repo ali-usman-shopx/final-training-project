@@ -37,9 +37,128 @@
     </nav>
 
     <!-- Page Content -->
-    <main>
+    <main class="checkout_section_container">
+        <section id="order_information_section">
+            <div id="order_summary_section">
+                <div class="title">Order Summary</div>
+                <div id="order_summary">
+                    <div id="promo_link">+ Add Promo Code</div>
+                    <div id="delivery_date_info">
+                        <label class="label">Delivery Date</label>
+                        <input id="delivery_date_input" class="input_field" type="text" readonly />
+                    </div>
+                    <div id="meals_sub_total_info">
+                        <span>Meals</span>
+                        <span class="amount" id="meals_sub_total">$0</span>
+                    </div>
+                    <div id="shipping_info">
+                        <span>Shipping</span>
+                        <span class="amount" id="shipping_amount">$8.99</span>
+                    </div>
+                    <div id="tax_info">
+                        <span>Tax</span>
+                        <span class="amount" id="tax_amount">$10.99</span>
+                    </div>
+                    <div id="total_info">
+                        <span>Total</span>
+                        <span class="amount" id="total_amount">$19.98</span>
+                    </div>
+                </div>
+            </div>
+            <div id="selected_meals_section">
+                <div class="title">My Meals</div>
+                <div id="selected_meals_container"></div>
+            </div>
+        </section>
 
+        <section id="checkout_form_section">
+            <div class="title">Checkout</div>
+            <form id="checkout_form">
+                <div class="subtitle">Delivery Address</div>
+    
+                <div id="name_inputs_wrapper">
+                    <div>
+                        <label class="label" for="first_name_input">First Name</label>
+                        <input id="first_name_input" name="first_name_input" class="input_field" required />
+                    </div>
+                    <div>
+                        <label class="label" for="last_name_input">Last Name</label>
+                        <input id="last_name_input" name="last_name_input" class="input_field" required />
+                    </div>
+                </div>
+
+                <div>
+                    <label class="label" for="full_name_delivery_address_input_1">Full Name for Delivery Address</label>
+                    <input id="full_name_delivery_address_input_1" name="full_name_delivery_address_input_1" class="input_field" required />
+                </div>
+                <div>
+                    <label class="label" for="full_name_delivery_address_input_2">Full Name for Delivery Address</label>
+                    <input id="full_name_delivery_address_input_2" name="full_name_delivery_address_input_2" class="input_field" required />
+                </div>
+
+                <div>
+                    <label class="label" for="address_line_1_input">Address Line 1</label>
+                    <input id="address_line_1_input" name="address_line_1_input" class="input_field" required />
+                </div>
+                <div>
+                    <label class="label" for="address_line_2_input">Address Line 2 (Optional)</label>
+                    <input id="address_line_2_input" name="address_line_2_input" class="input_field" />
+                </div>
+
+                <div id="city_inputs_wrapper">
+                    <div id="city_wrapper">
+                        <label class="label" for="city_input">City</label>
+                        <input id="city_input" name="city_input" class="input_field" required />
+                    </div>
+                    <div id="state_wrapper">
+                        <label class="label" for="state_input">State</label>
+                        <input id="state_input" name="state_input" class="input_field" required />
+                    </div>
+                    <div id="zip_wrapper">
+                        <label class="label" for="zip_code_input">Zip &nbsp;<span id="change_zip_link">change</span></label>
+                        <input id="zip_code_input" name="zip_code_input" class="input_field" required />
+                    </div>
+                </div>
+
+                <div>
+                    <label class="label" for="phone_input">Phone</label>
+                    <input id="phone_input" name="phone_input" class="input_field" required />
+                </div>
+
+                <div id="messaging_checkbox_wrapper">
+                    <input type="checkbox" id="messaging_consent_checkbox" name="messaging_consent_checkbox" checked>
+                    <label class="label" for="messaging_consent_checkbox">Receive SMS text message updates on my orders</label>
+                </div>
+
+                <div>
+                    <label class="label" for="email_input">Email (We require your email to send you receipts and order updates)</label>
+                    <input id="email_input" name="email_input" class="input_field" required />
+                </div>
+
+                <hr class="form_rule" />
+
+                <button id="checkout_form_submit_button">
+                    Checkout
+                </button>
+            </form>
+        </section>
     </main>
+
+    <div class="grid">
+        <div class="col-md-10 offset-md-1 col-12 dividing_rule_wrapper">
+            <hr>
+        </div>
+    </div>
+
+    <section class="qa_section_container">
+        <div class="grid">
+            <div class="col-md-10 col-12 offset-md-1 qa_banner_text">
+                Common Questions
+            </div>
+
+            <div class="col-md-10 offset-md-1 col-12" id="qa_accordion_wrapper"></div>
+        </div>
+    </section>
 </body>
 
 </html>
