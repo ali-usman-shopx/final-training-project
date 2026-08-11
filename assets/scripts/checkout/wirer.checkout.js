@@ -2,6 +2,7 @@
 import SelectedMealCardsGenerator from "./generator.selected.meal.cards.js";
 import managerCheckout from "./manager.checkout.js";
 import validate from "./validator.checkout.form.js";
+import PromoFieldGenerator from "./generator.promo.field.js";
 
 const generateAndAttachSelectedMealCards = function() {
     const element = document.getElementById("selected_meals_container");
@@ -53,4 +54,14 @@ const validateOnFormSubmit = function() {
     );
 }
 
-export { generateAndAttachSelectedMealCards, attachOrderSummary, validateOnFormSubmit };
+const generateAndAttachPromoFields = function() {
+    const element = document.getElementById("promo_link");
+    element.append(PromoFieldGenerator.generate());
+}
+
+const wirePromoFieldGeneration = function() {
+    const element = document.getElementById("true_promo_link");
+    element.addEventListener("click", generateAndAttachPromoFields);
+}
+
+export { generateAndAttachSelectedMealCards, attachOrderSummary, validateOnFormSubmit, wirePromoFieldGeneration };

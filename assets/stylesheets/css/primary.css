@@ -1563,6 +1563,11 @@
   justify-content: space-between;
 }
 #order_information_section #order_summary_section #order_summary #promo_link {
+  display: flex !important;
+  flex-direction: column !important;
+  row-gap: 5px !important;
+}
+#order_information_section #order_summary_section #order_summary #promo_link #true_promo_link {
   color: #3167FF;
   text-decoration: underline;
   cursor: pointer;

@@ -44,10 +44,16 @@
             }
 
             #promo_link {
-                color: colors.$link-text;
-                text-decoration: underline;
-                cursor: pointer;
-                font-size: 15px;
+                display: flex !important;
+                flex-direction: column !important;
+                row-gap: 5px !important;             
+
+                #true_promo_link {
+                    color: colors.$link-text;
+                    text-decoration: underline;
+                    cursor: pointer;
+                    font-size: 15px;
+                }
             }
 
             .amount {

@@ -25,7 +25,8 @@ import managerMeals from "./meals/manager.meals.js";
 import {
     generateAndAttachSelectedMealCards,
     attachOrderSummary,
-    validateOnFormSubmit
+    validateOnFormSubmit,
+    wirePromoFieldGeneration
 } from "./checkout/wirer.checkout.js"
 
 const initializeBreadcrumbs = function() {
@@ -92,6 +93,7 @@ const initializeCheckoutPage = async function() {
     generateAndAttachSelectedMealCards();
     attachOrderSummary();
     validateOnFormSubmit();
+    wirePromoFieldGeneration();
 }
  
 async function initialize() {
