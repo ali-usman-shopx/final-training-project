@@ -30,6 +30,15 @@ class Manager {
         this.#mealsNeeded = managerStorageSession.getPlan().mealsCount;
     }
 
+    loadCartFromSession() {
+        try {
+            this.#cart = managerStorageSession.getMeals();
+            this.#notifyUpdate();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     getMealById(id) {
         if (this.#meals == null) return null;
 

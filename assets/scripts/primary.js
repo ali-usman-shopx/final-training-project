@@ -76,6 +76,7 @@ const initializeCartCards = function() {
     invokeCartSummaryGeneration();
     loadDeliveryDate();
     wireCartDrawer();
+    managerMeals.loadCartFromSession();
 }
 
 const initializeMealsPage = async function() {
