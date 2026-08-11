@@ -34,7 +34,7 @@ class Manager {
         try {
             this.#cart = managerStorageSession.getMeals();
             if (this.#cart) this.#notifyUpdate();
-            else {this.#cart = [];}
+            else this.#cart = [];
         } catch (error) {
             console.log(error);
         }
