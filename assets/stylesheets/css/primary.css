@@ -1045,6 +1045,28 @@
     margin-right: 0px;
   }
 }
+@media (max-width: 768px) {
+  #meals_section_container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 16px;
+    margin: 0px;
+    column-gap: 0px;
+  }
+  #meals_section_container .meal_card {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0px;
+  }
+  #meals_section_container .meal_card .cells_wrapper {
+    width: 70%;
+  }
+  #meals_section_container .meal_card .cell {
+    padding-right: 14px;
+    padding-left: 14px;
+    margin: 0px !important;
+  }
+}
 #cart_section_container {
   background-color: #FFFFFF;
   position: relative;
@@ -1055,6 +1077,9 @@
   width: 344px !important;
   padding-bottom: 150px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+}
+#cart_section_container .drawer_toggle_wrapper {
+  display: none;
 }
 #cart_section_container .header {
   min-width: 100%;
@@ -1177,6 +1202,7 @@
   text-align: center;
 }
 #cart_section_container .footer {
+  box-sizing: border-box;
   flex-shrink: 0;
   position: absolute;
   bottom: 0;
@@ -1250,6 +1276,136 @@
 @media (max-width: 1025px) {
   #cart_section_container {
     width: 270px !important;
+  }
+}
+@media (max-width: 768px) {
+  #order_summary {
+    display: none;
+  }
+  #cart_section_container {
+    border-radius: 20px 20px 0px 0px;
+    overflow: hidden;
+    --drawer-height: 50vh;
+    --footer-height: 150px;
+    --drawer-toggle-height: 30px;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100% !important;
+    /*
+     * Closed state:
+     * The container is exactly the height of the footer.
+     */
+    height: var(--footer-height);
+    min-height: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*
+     * Do NOT make the container itself flex here.
+     * The footer remains anchored to the bottom.
+     */
+    transition: none;
+    box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1607843137);
+    /*
+     * The drawer content is hidden behind the footer
+     * while closed.
+     */
+  }
+  #cart_section_container .drawer_toggle_wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--drawer-toggle-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    /*
+     * Keep it behind the footer while closed.
+     */
+    z-index: 0;
+  }
+  #cart_section_container #cart_drawer_toggle {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  #cart_section_container #cart_drawer_toggle svg {
+    width: 18px;
+    height: 10px;
+  }
+  #cart_section_container #cart_drawer_toggle svg path {
+    stroke: #D75E33;
+    stroke-width: 2;
+  }
+  #cart_section_container .header {
+    position: absolute;
+    top: var(--drawer-toggle-height);
+    left: 0;
+    width: 100%;
+    height: 41px;
+    z-index: 0;
+  }
+  #cart_section_container .body {
+    position: absolute;
+    top: calc(var(--drawer-toggle-height) + 41px);
+    bottom: var(--footer-height);
+    left: 0;
+    right: 0;
+    min-height: 0;
+    overflow-y: auto;
+    z-index: 0;
+  }
+  #cart_section_container {
+    /*
+     * Keep the existing desktop footer appearance.
+     * Only change its positioning so it stays anchored
+     * to the bottom of the viewport.
+     */
+  }
+  #cart_section_container .footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: var(--footer-height);
+    box-sizing: border-box;
+    /*
+     * Preserve your existing footer styling:
+     * padding, border, radius, background,
+     * flex layout, etc.
+     */
+    z-index: 10;
+  }
+  #cart_section_container {
+    /*
+     * OPEN
+     */
+  }
+  #cart_section_container.drawer_open {
+    height: var(--drawer-height);
+    border-radius: 0px;
+  }
+  #cart_section_container.drawer_open .drawer_toggle_wrapper,
+  #cart_section_container.drawer_open .header,
+  #cart_section_container.drawer_open .body {
+    z-index: 5;
+  }
+  #cart_section_container.drawer_open .footer {
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
   }
 }
 .meals_page_container {

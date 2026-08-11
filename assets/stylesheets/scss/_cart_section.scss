@@ -18,6 +18,10 @@
 
     box-shadow: 0px 3px 6px #00000029;
 
+    .drawer_toggle_wrapper {
+        display: none;
+    }
+
     .header {
         min-width: 100%;
         height: 41px !important;
@@ -164,6 +168,8 @@
     }
 
     .footer {
+        box-sizing: border-box;
+
         flex-shrink: 0;
         position: absolute;
         bottom: 0;
@@ -253,5 +259,181 @@
 @media (max-width: grid.$breakpoint-lg) {
     #cart_section_container {
         width: 270px !important;
+    }
+}
+
+@media (max-width: grid.$breakpoint-md) {
+
+    #order_summary {
+        display: none;
+    }
+
+    #cart_section_container {
+        border-radius: 20px 20px 0px 0px;
+        overflow: hidden;
+
+        --drawer-height: 50vh;
+        --footer-height: 150px;
+        --drawer-toggle-height: 30px;
+
+        position: fixed;
+        z-index: 100;
+
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        width: 100% !important;
+
+        /*
+         * Closed state:
+         * The container is exactly the height of the footer.
+         */
+        height: var(--footer-height);
+
+        min-height: 0;
+        padding: 0;
+
+        box-sizing: border-box;
+
+        /*
+         * Do NOT make the container itself flex here.
+         * The footer remains anchored to the bottom.
+         */
+        // transition: height 250ms ease;
+        transition: none;
+
+        box-shadow: 0px -3px 10px #00000029;
+
+
+        /*
+         * The drawer content is hidden behind the footer
+         * while closed.
+         */
+        .drawer_toggle_wrapper {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: var(--drawer-toggle-height);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: colors.$sharp-white-bg;
+
+            /*
+             * Keep it behind the footer while closed.
+             */
+            z-index: 0;
+        }
+
+
+        #cart_drawer_toggle {
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 0;
+            margin: 0;
+
+            border: none;
+            background: transparent;
+
+            cursor: pointer;
+
+            svg {
+                width: 18px;
+                height: 10px;
+
+                path {
+                    stroke: colors.$accent_text;
+                    stroke-width: 2;
+                }
+            }
+        }
+
+
+        .header {
+            position: absolute;
+
+            top: var(--drawer-toggle-height);
+            left: 0;
+
+            width: 100%;
+            height: 41px;
+
+            z-index: 0;
+        }
+
+
+        .body {
+            position: absolute;
+
+            top: calc(var(--drawer-toggle-height) + 41px);
+            bottom: var(--footer-height);
+
+            left: 0;
+            right: 0;
+
+            min-height: 0;
+
+            overflow-y: auto;
+
+            z-index: 0;
+        }
+
+
+        /*
+         * Keep the existing desktop footer appearance.
+         * Only change its positioning so it stays anchored
+         * to the bottom of the viewport.
+         */
+        .footer {
+            position: absolute;
+
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            width: 100%;
+            height: var(--footer-height);
+
+            box-sizing: border-box;
+
+            /*
+             * Preserve your existing footer styling:
+             * padding, border, radius, background,
+             * flex layout, etc.
+             */
+            z-index: 10;
+        }
+
+
+        /*
+         * OPEN
+         */
+        &.drawer_open {
+            height: var(--drawer-height);
+            border-radius: 0px;
+
+            .drawer_toggle_wrapper,
+            .header,
+            .body {
+                z-index: 5;
+            }
+
+            .footer {
+                border-radius: 0;
+                border: none;
+                box-shadow: none;
+            }
+        }
     }
 }

@@ -4,6 +4,7 @@ import CartCardGenerator from "./generator.cart.card.js";
 import CartSummaryGenerator from "./generator.cart.summary.js";
 import managerMeals from "./manager.meals.js";
 import { navigateToNextPage } from "../breadcrumbs/manager.breadcrumbs.js";
+import CartDrawerGenerator from "./generator.cart.drawer.js";
 
 const generateAndAttachMealCards = function() {
     const element = document.getElementById("meals_section_container");
@@ -58,4 +59,29 @@ const wireNextButton = function() {
     });
 }
 
-export {generateAndAttachMealCards, wireCartCardGenerationToCartUpdateEvent, wireClearCart, wireCartSummaryGeneration, invokeCartSummaryGeneration, loadDeliveryDate, wireNextButton}
+const wireCartDrawer = function() {
+
+    const cartSection = document.getElementById(
+        "cart_section_container"
+    );
+
+    const toggle = document.getElementById(
+        "cart_drawer_toggle"
+    );
+
+    const cartPill = document.getElementById(
+        "cart_pill"
+    );
+
+    CartDrawerGenerator.attachToggleIcon();
+
+    cartPill.addEventListener("click", () => {
+        cartSection.classList.add("drawer_open");
+    });
+
+    toggle.addEventListener("click", () => {
+        cartSection.classList.remove("drawer_open");
+    });
+};
+
+export {generateAndAttachMealCards, wireCartCardGenerationToCartUpdateEvent, wireClearCart, wireCartSummaryGeneration, invokeCartSummaryGeneration, loadDeliveryDate, wireNextButton, wireCartDrawer}

@@ -117,3 +117,29 @@
         margin-right: 0px;
     }
 }
+
+@media (max-width: grid.$breakpoint-md) {
+    #meals_section_container {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        padding: 16px;
+        margin: 0px;
+        column-gap: 0px;
+
+        .meal_card {
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0px;
+
+            .cells_wrapper {
+                width: 70%;
+            }
+
+            .cell {
+                padding-right: 14px;
+                padding-left: 14px;
+                margin: 0px !important;
+            }
+        }
+    }
+}

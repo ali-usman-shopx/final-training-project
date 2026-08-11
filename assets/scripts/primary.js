@@ -17,7 +17,8 @@ import {
     wireCartSummaryGeneration,
     invokeCartSummaryGeneration,
     loadDeliveryDate,
-    wireNextButton
+    wireNextButton,
+    wireCartDrawer
 } from "./meals/wirer.meals.js";
 import managerMeals from "./meals/manager.meals.js";
 
@@ -67,6 +68,7 @@ const initializeCartCards = function() {
     wireCartSummaryGeneration();
     invokeCartSummaryGeneration();
     loadDeliveryDate();
+    wireCartDrawer();
 }
 
 const initializeMealsPage = async function() {
