@@ -105,6 +105,7 @@
 
                         .special_ingredients {
                             font: normal normal normal 12px/25px fonts.$roboto;
+                            color: #707070;
                         }
                     }
                 }
@@ -124,9 +125,8 @@
                         font: normal normal bold 12px/25px fonts.$roboto;
                         padding: 0px 4px 0px 4px;
                     }
-
-                    .action_button {
-                        color: colors.$sharp_white_text;
+                    .special_ingredients {
+                        color: white !important;
                     }
                 }
             }

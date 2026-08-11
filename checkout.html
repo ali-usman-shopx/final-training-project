@@ -115,7 +115,7 @@
                         <input id="state_input" name="state_input" class="input_field" required />
                     </div>
                     <div id="zip_wrapper">
-                        <label class="label" for="zip_code_input">Zip &nbsp;<span id="change_zip_link">change</span></label>
+                        <label class="label" for="zip_code_input">Zip <span id="change_zip_link">change</span></label>
                         <input id="zip_code_input" name="zip_code_input" class="input_field" required />
                     </div>
                 </div>
@@ -123,16 +123,18 @@
                 <div>
                     <label class="label" for="phone_input">Phone</label>
                     <input id="phone_input" name="phone_input" class="input_field" required />
+                    <div id="phone_invalid" class="invalid_field_input_feedback hidden">Malformed phone number; (Optional +) 13 Characters form a phone number.</div>
                 </div>
 
                 <div id="messaging_checkbox_wrapper">
                     <input type="checkbox" id="messaging_consent_checkbox" name="messaging_consent_checkbox" checked>
-                    <label class="label" for="messaging_consent_checkbox">Receive SMS text message updates on my orders</label>
+                    <label id="messaging_consent_label" class="label" for="messaging_consent_checkbox">Receive SMS text message updates on my orders</label>
                 </div>
 
                 <div>
                     <label class="label" for="email_input">Email (We require your email to send you receipts and order updates)</label>
-                    <input id="email_input" name="email_input" class="input_field" required />
+                    <input id="email_input" name="email_input" class="input_field" type="email" required />
+                    <div id="email_invalid" class="invalid_field_input_feedback hidden">Malformed email address!</div>
                 </div>
 
                 <hr class="form_rule" />

@@ -1279,9 +1279,6 @@
   }
 }
 @media (max-width: 768px) {
-  #order_summary {
-    display: none;
-  }
   #cart_section_container {
     border-radius: 20px 20px 0px 0px;
     overflow: hidden;
@@ -1294,6 +1291,11 @@
     right: 0;
     bottom: 0;
     width: 100% !important;
+  }
+  #cart_section_container #order_summary {
+    display: none;
+  }
+  #cart_section_container {
     transition: transform 250ms ease;
     --scroll-visible-height: 20px;
   }
@@ -1457,6 +1459,15 @@
 #checkout_form_section #checkout_form div {
   margin-bottom: 16px;
 }
+#checkout_form_section #checkout_form .invalid_field_input_feedback {
+  margin-top: 5px;
+  font-size: 11px;
+  color: rgb(205, 0, 0);
+  font-family: "Roboto", sans-serif;
+}
+#checkout_form_section #checkout_form .invalid_field_input_feedback.hidden {
+  display: none;
+}
 #checkout_form_section #checkout_form #name_inputs_wrapper {
   display: flex;
   flex-direction: row;
@@ -1492,12 +1503,12 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 0px !important;
+  margin-bottom: 12px !important;
   margin-left: -4px !important;
-  margin-top: -10px !important;
+  margin-top: 0px !important;
 }
 #checkout_form_section #checkout_form #messaging_checkbox_wrapper .label {
-  font: normal normal normal 14px/43px "Roboto", sans-serif !important;
+  font: normal normal normal 13px/13px "Roboto", sans-serif !important;
 }
 #checkout_form_section #checkout_form .form_rule {
   width: 100%;
@@ -1603,6 +1614,7 @@
 }
 #order_information_section #selected_meals_section #selected_meals_container .selected_meal_card .item_info .text_wrapper .special_ingredients {
   font: normal normal normal 12px/25px "Roboto", sans-serif;
+  color: #707070;
 }
 #order_information_section #selected_meals_section #selected_meals_container .selected_meal_card.premium_item {
   position: relative;
@@ -1618,8 +1630,8 @@
   font: normal normal bold 12px/25px "Roboto", sans-serif;
   padding: 0px 4px 0px 4px;
 }
-#order_information_section #selected_meals_section #selected_meals_container .selected_meal_card.premium_item .action_button {
-  color: #FFFFFF;
+#order_information_section #selected_meals_section #selected_meals_container .selected_meal_card.premium_item .special_ingredients {
+  color: white !important;
 }
 
 .checkout_section_container {
@@ -1630,7 +1642,50 @@
   column-gap: 24px;
   padding-top: 35px !important;
 }
+@media (max-width: 1025px) {
+  .checkout_section_container #checkout_form_section {
+    width: 50%;
+  }
+  .checkout_section_container #order_information_section {
+    width: 40%;
+  }
+  .checkout_section_container #city_inputs_wrapper div {
+    width: 33% !important;
+  }
+}
 
+@media (max-width: 768px) {
+  .checkout_section_container {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+    padding-top: 30px !important;
+    padding-bottom: 10px !important;
+  }
+  .checkout_section_container #order_information_section {
+    width: 92%;
+    overflow: visible;
+  }
+  .checkout_section_container #order_information_section .title {
+    font-size: 30px;
+  }
+  .checkout_section_container #checkout_form_section {
+    width: 92%;
+  }
+  .checkout_section_container #checkout_form_section .title {
+    font-size: 30px;
+  }
+  .checkout_section_container #checkout_form_section #checkout_form {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+  .checkout_section_container #checkout_form_section #checkout_form #city_inputs_wrapper {
+    flex-direction: column;
+  }
+  .checkout_section_container #checkout_form_section #checkout_form #city_inputs_wrapper div {
+    width: 100% !important;
+  }
+}
 html,
 body {
   margin: 0;

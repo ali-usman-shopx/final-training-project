@@ -263,11 +263,6 @@
 }
 
 @media (max-width: grid.$breakpoint-md) {
-
-    #order_summary {
-        display: none;
-    }
-
     #cart_section_container {
         border-radius: 20px 20px 0px 0px;
         overflow: hidden;
@@ -284,6 +279,10 @@
         bottom: 0;
 
         width: 100% !important;
+
+        #order_summary {
+            display: none;
+        }
 
         // For scroll movement
         transition: transform 250ms ease;

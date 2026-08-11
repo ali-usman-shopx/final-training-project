@@ -1,6 +1,7 @@
 
 import SelectedMealCardsGenerator from "./generator.selected.meal.cards.js";
 import managerCheckout from "./manager.checkout.js";
+import validate from "./validator.checkout.form.js";
 
 const generateAndAttachSelectedMealCards = function() {
     const element = document.getElementById("selected_meals_container");
@@ -38,4 +39,18 @@ const attachOrderSummary = function() {
     shippingElement.textContent = `$${shipping}`;
 }
 
-export { generateAndAttachSelectedMealCards, attachOrderSummary };
+const validateOnFormSubmit = function() {
+    document.getElementById("checkout_form_submit_button").addEventListener(
+        "click",
+        (event) => {
+            event.preventDefault();
+
+            if (!validate()) return;
+
+            console.log("Submitting the form!");
+            // document.getElementById("checkout_form").submit();
+        }
+    );
+}
+
+export { generateAndAttachSelectedMealCards, attachOrderSummary, validateOnFormSubmit };

@@ -4,6 +4,7 @@
 @use "order_information_section";
 
 @use "fonts";
+@use "grid";
 
 .checkout_section_container {
     width: 100%;
@@ -15,4 +16,63 @@
     column-gap: 24px;
 
     padding-top: 35px !important;
+
+    @media (max-width: grid.$breakpoint-lg) {
+        #checkout_form_section {
+            width: 50%;
+        }
+
+        #order_information_section {
+            width: 40%;
+        }
+
+        #city_inputs_wrapper {
+            div {
+                width: 33% !important;
+            }
+        }
+    }
+
+}
+
+@media (max-width: grid.$breakpoint-md) {
+    .checkout_section_container {
+        flex-direction: column;
+        align-items: center;
+
+        row-gap: 15px;
+
+        padding-top: 30px !important;
+        padding-bottom: 10px !important;
+        
+        #order_information_section {
+            width: 92%;
+            overflow: visible;
+        
+            .title {
+                font-size: 30px;
+            }
+        }
+
+        #checkout_form_section {
+            width: 92%;
+        
+            .title {
+                font-size: 30px;
+            }
+            
+            #checkout_form {
+                padding-left: 11px;
+                padding-right: 11px;
+
+                #city_inputs_wrapper {
+                    flex-direction: column;
+
+                    div {
+                        width: 100% !important;
+                    }
+                }
+            }
+        }
+    }
 }

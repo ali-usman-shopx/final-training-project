@@ -24,7 +24,8 @@ import managerMeals from "./meals/manager.meals.js";
 
 import {
     generateAndAttachSelectedMealCards,
-    attachOrderSummary
+    attachOrderSummary,
+    validateOnFormSubmit
 } from "./checkout/wirer.checkout.js"
 
 const initializeBreadcrumbs = function() {
@@ -90,6 +91,7 @@ const initializeCheckoutPage = async function() {
     initializeAccordionQA();
     generateAndAttachSelectedMealCards();
     attachOrderSummary();
+    validateOnFormSubmit();
 }
  
 async function initialize() {
