@@ -78,6 +78,12 @@ const initializeMealsPage = async function() {
     initializeCartCards();
     wireNextButton();
 }
+
+const initializeCheckoutPage = async function() {
+    if (pages.CHECKOUT !== window.location.href.split("/").pop()) return;
+
+    initializeAccordionQA();
+}
  
 async function initialize() {
     initializeBreadcrumbs();
@@ -87,6 +93,8 @@ async function initialize() {
     await initializeDayPage();
 
     await initializeMealsPage();
+
+    await initializeCheckoutPage();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
