@@ -285,6 +285,23 @@
 
         width: 100% !important;
 
+        // For scroll movement
+        transition: transform 250ms ease;
+        --scroll-visible-height: 20px;
+
+        &.cart_scroll_hidden:not(.drawer_open) {
+            transform: translateY(
+                calc(100% - var(--scroll-visible-height))
+            );
+        }
+
+        &.drawer_open.cart_scroll_hidden {
+            transform: translateY(
+                calc(var(--footer-height) - var(--scroll-visible-height))
+            );
+        }
+        // End
+
         /*
          * Closed state:
          * The container is exactly the height of the footer.
@@ -301,7 +318,7 @@
          * The footer remains anchored to the bottom.
          */
         // transition: height 250ms ease;
-        transition: none;
+        // transition: none;
 
         box-shadow: 0px -3px 10px #00000029;
 

@@ -1294,6 +1294,16 @@
     right: 0;
     bottom: 0;
     width: 100% !important;
+    transition: transform 250ms ease;
+    --scroll-visible-height: 20px;
+  }
+  #cart_section_container.cart_scroll_hidden:not(.drawer_open) {
+    transform: translateY(calc(100% - var(--scroll-visible-height)));
+  }
+  #cart_section_container.drawer_open.cart_scroll_hidden {
+    transform: translateY(calc(var(--footer-height) - var(--scroll-visible-height)));
+  }
+  #cart_section_container {
     /*
      * Closed state:
      * The container is exactly the height of the footer.
@@ -1306,7 +1316,6 @@
      * Do NOT make the container itself flex here.
      * The footer remains anchored to the bottom.
      */
-    transition: none;
     box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1607843137);
     /*
      * The drawer content is hidden behind the footer

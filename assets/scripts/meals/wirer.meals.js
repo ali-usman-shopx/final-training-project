@@ -5,6 +5,7 @@ import CartSummaryGenerator from "./generator.cart.summary.js";
 import managerMeals from "./manager.meals.js";
 import { navigateToNextPage } from "../breadcrumbs/manager.breadcrumbs.js";
 import CartDrawerGenerator from "./generator.cart.drawer.js";
+import CartDrawerScrollController from "./controller.cart.drawer.scroll.js";
 
 const generateAndAttachMealCards = function() {
     const element = document.getElementById("meals_section_container");
@@ -74,6 +75,7 @@ const wireCartDrawer = function() {
     );
 
     CartDrawerGenerator.attachToggleIcon();
+    CartDrawerScrollController.initialize();
 
     cartPill.addEventListener("click", () => {
         cartSection.classList.add("drawer_open");
