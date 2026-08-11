@@ -22,6 +22,11 @@ import {
 } from "./meals/wirer.meals.js";
 import managerMeals from "./meals/manager.meals.js";
 
+import {
+    generateAndAttachSelectedMealCards,
+    attachOrderSummary
+} from "./checkout/wirer.checkout.js"
+
 const initializeBreadcrumbs = function() {
     wireBreadcrumbs();
 }
@@ -83,6 +88,8 @@ const initializeCheckoutPage = async function() {
     if (pages.CHECKOUT !== window.location.href.split("/").pop()) return;
 
     initializeAccordionQA();
+    generateAndAttachSelectedMealCards();
+    attachOrderSummary();
 }
  
 async function initialize() {

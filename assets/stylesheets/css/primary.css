@@ -1443,6 +1443,8 @@
   border: 0.75px solid #9D9D9D;
   border-radius: 4px;
   margin-top: 9px;
+  padding-left: 17px;
+  padding-right: 17px;
 }
 #checkout_form_section #checkout_form {
   background-color: #FFFFFF;
@@ -1532,6 +1534,8 @@
   height: 35px;
   border: 0.75px solid #9D9D9D;
   border-radius: 4px;
+  padding-left: 17px;
+  padding-right: 17px;
 }
 #order_information_section #order_summary_section #order_summary {
   margin-top: 23px;
@@ -1564,6 +1568,58 @@
 }
 #order_information_section #selected_meals_section #selected_meals_container {
   margin-top: 23px;
+}
+#order_information_section #selected_meals_section #selected_meals_container .selected_meal_card {
+  padding: 5px;
+  background-color: #F3F3F3;
+  border: 0.5px solid #D5D5D5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#order_information_section #selected_meals_section #selected_meals_container .selected_meal_card .count_section {
+  width: 43px;
+  text-align: center;
+  font: normal normal bold 14px/43px "Roboto", sans-serif;
+}
+#order_information_section #selected_meals_section #selected_meals_container .selected_meal_card .item_info {
+  display: flex;
+  flex-direction: row;
+  column-gap: 7px;
+  align-items: center;
+  margin-right: 8px;
+  position: relative;
+}
+#order_information_section #selected_meals_section #selected_meals_container .selected_meal_card .item_info .img {
+  width: 97px !important;
+  height: 65px !important;
+}
+#order_information_section #selected_meals_section #selected_meals_container .selected_meal_card .item_info .text_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+#order_information_section #selected_meals_section #selected_meals_container .selected_meal_card .item_info .text_wrapper .title {
+  font: normal normal bold 14px/20px "Roboto", sans-serif;
+}
+#order_information_section #selected_meals_section #selected_meals_container .selected_meal_card .item_info .text_wrapper .special_ingredients {
+  font: normal normal normal 12px/25px "Roboto", sans-serif;
+}
+#order_information_section #selected_meals_section #selected_meals_container .selected_meal_card.premium_item {
+  position: relative;
+  background-color: black;
+  color: #FFFFFF;
+  border-color: black;
+}
+#order_information_section #selected_meals_section #selected_meals_container .selected_meal_card.premium_item .premium_tag {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background-color: #D75E33;
+  font: normal normal bold 12px/25px "Roboto", sans-serif;
+  padding: 0px 4px 0px 4px;
+}
+#order_information_section #selected_meals_section #selected_meals_container .selected_meal_card.premium_item .action_button {
+  color: #FFFFFF;
 }
 
 .checkout_section_container {

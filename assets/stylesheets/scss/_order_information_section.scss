@@ -22,6 +22,8 @@
         height: 35px;
         border: 0.75px solid #9D9D9D;
         border-radius: 4px;
+        padding-left: 17px;
+        padding-right: 17px;
     }
 
     #order_summary_section {
@@ -62,6 +64,72 @@
         margin-top: 22px;
         #selected_meals_container {
             margin-top: 23px;
+
+            .selected_meal_card {
+                padding: 5px;
+                background-color: #F3F3F3;
+
+                border: 0.5px solid #D5D5D5;
+
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                .count_section {
+                    width: 43px;
+                    text-align: center;
+                    font: normal normal bold 14px/43px fonts.$roboto;
+                }
+
+                .item_info {
+                    display: flex;
+                    flex-direction: row;
+                    column-gap: 7px;
+                    align-items: center;
+                    margin-right: 8px;
+
+                    position: relative;
+
+                    .img {
+                        width: 97px !important;
+                        height: 65px !important;
+                    }
+
+                    .text_wrapper {
+                        display: flex;
+                        flex-direction: column;
+
+                        .title {
+                            font: normal normal bold 14px/20px fonts.$roboto;
+                        }
+
+                        .special_ingredients {
+                            font: normal normal normal 12px/25px fonts.$roboto;
+                        }
+                    }
+                }
+
+                &.premium_item {
+                    position: relative;
+                    background-color: black;
+                    color: colors.$sharp-white-text;
+
+                    border-color: black;
+
+                    .premium_tag {
+                        position: absolute;
+                        bottom: 0px;
+                        left: 0px;
+                        background-color: colors.$accent_text;
+                        font: normal normal bold 12px/25px fonts.$roboto;
+                        padding: 0px 4px 0px 4px;
+                    }
+
+                    .action_button {
+                        color: colors.$sharp_white_text;
+                    }
+                }
+            }
         }
     }
 }
