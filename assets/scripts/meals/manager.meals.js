@@ -33,7 +33,8 @@ class Manager {
     loadCartFromSession() {
         try {
             this.#cart = managerStorageSession.getMeals();
-            this.#notifyUpdate();
+            if (this.#cart) this.#notifyUpdate();
+            else {this.#cart = [];}
         } catch (error) {
             console.log(error);
         }
