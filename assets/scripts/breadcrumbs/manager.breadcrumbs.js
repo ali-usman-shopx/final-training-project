@@ -74,4 +74,18 @@ const navigateToNextPage = function() {
     window.location.href = location.join("/");
 }
 
-export {configureBreadcrumbs, navigateToNextPage, pages};
+const pseudoGateway = function() {
+    let location = window.location.href.split("/");
+    const current = location.pop();
+    if (validatePage(current)) return; // allow access
+    
+    let lastValidPage = pages.PLANS;
+    for (const page of Object.values(pages)) {
+        if (validatePage(page)) lastValidPage = page;
+    }
+
+    location.push(lastValidPage);
+    window.location.href = location.join("/");
+}
+
+export {configureBreadcrumbs, navigateToNextPage, pseudoGateway, pages};

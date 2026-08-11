@@ -1,8 +1,10 @@
 
-import { configureBreadcrumbs } from "./manager.breadcrumbs.js";
+import { configureBreadcrumbs, pseudoGateway } from "./manager.breadcrumbs.js";
 import managerStorageSession from "../storage/manager.storage.session.js";
 
 const wireBreadcrumbs = function() {
+    applyPseudoGateway();
+
     const breadcrumbs = document.querySelector(".breadcrumb");
 
     if (!breadcrumbs) {
@@ -17,5 +19,9 @@ const wireBreadcrumbs = function() {
         configureBreadcrumbs(breadcrumbs);
     });
 };
+
+const applyPseudoGateway = function() {
+    pseudoGateway();
+}
 
 export default wireBreadcrumbs;
