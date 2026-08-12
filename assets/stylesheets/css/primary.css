@@ -1393,7 +1393,7 @@
     height: var(--footer-height);
     box-sizing: border-box;
     /*
-     * Preserve your existing footer styling:
+     * Preserve the existing footer styling:
      * padding, border, radius, background,
      * flex layout, etc.
      */
@@ -1401,7 +1401,7 @@
   }
   #cart_section_container {
     /*
-     * OPEN
+     * Opened State
      */
   }
   #cart_section_container.drawer_open {

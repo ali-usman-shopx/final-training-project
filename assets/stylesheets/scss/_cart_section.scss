@@ -424,7 +424,7 @@
             box-sizing: border-box;
 
             /*
-             * Preserve your existing footer styling:
+             * Preserve the existing footer styling:
              * padding, border, radius, background,
              * flex layout, etc.
              */
@@ -433,7 +433,7 @@
 
 
         /*
-         * OPEN
+         * Opened State
          */
         &.drawer_open {
             height: var(--drawer-height);
