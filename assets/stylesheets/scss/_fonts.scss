@@ -1,12 +1,12 @@
 // fonts.scss
 
-@function px_to_vw($px, $reference-width: 1440px) {
-    @return ($px / $reference-width) * 100vw;
-}
+// @function px_to_vw($px, $reference-width: 1440px) {
+//     @return ($px / $reference-width) * 100vw;
+// }
 
-@function px_to_vh($px, $reference-height: 820px) {
-    @return ($px / $reference-height) * 100vh;
-}
+// @function px_to_vh($px, $reference-height: 820px) {
+//     @return ($px / $reference-height) * 100vh;
+// }
 
 $roboto: "Roboto", sans-serif;
 $roboto-condensed: "Roboto Condensed", sans-serif;
