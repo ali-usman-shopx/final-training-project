@@ -75,6 +75,12 @@ const navigateToNextPage = function() {
 }
 
 const navigateToLastValidPage = function() {
+    let lastValidPage = pages.PLANS;
+    
+    for (const page of Object.values(pages)) {
+        if (validatePage(page)) lastValidPage = page;
+    }
+    
     location.push(lastValidPage);
     window.location.href = location.join("/");
 }
@@ -90,11 +96,6 @@ const pseudoGateway = function() {
 
     if (validatePage(current)) return; // allow access
     
-    let lastValidPage = pages.PLANS;
-    for (const page of Object.values(pages)) {
-        if (validatePage(page)) lastValidPage = page;
-    }
-
     navigateToLastValidPage();
 }
 

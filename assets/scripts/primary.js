@@ -30,7 +30,7 @@ import {
 } from "./checkout/wirer.checkout.js"
 
 const getVersion = function() {
-    return "0.4.13";
+    return "0.4.14";
 }
 
 const initializeBreadcrumbs = function() {
