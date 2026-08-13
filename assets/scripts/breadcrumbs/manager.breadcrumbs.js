@@ -74,9 +74,20 @@ const navigateToNextPage = function() {
     window.location.href = location.join("/");
 }
 
+const navigateToLastValidPage = function() {
+    location.push(lastValidPage);
+    window.location.href = location.join("/");
+}
+
 const pseudoGateway = function() {
     let location = window.location.href.split("/");
     const current = location.pop();
+
+    if (!(current in pages)) {
+        navigateToLastValidPage();
+        return;
+    }
+
     if (validatePage(current)) return; // allow access
     
     let lastValidPage = pages.PLANS;
@@ -84,8 +95,7 @@ const pseudoGateway = function() {
         if (validatePage(page)) lastValidPage = page;
     }
 
-    location.push(lastValidPage);
-    window.location.href = location.join("/");
+    navigateToLastValidPage();
 }
 
 export {configureBreadcrumbs, navigateToNextPage, pseudoGateway, pages};
