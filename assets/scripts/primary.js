@@ -30,7 +30,7 @@ import {
 } from "./checkout/wirer.checkout.js"
 
 const getVersion = function() {
-    return "0.4.10";
+    return "0.4.11";
 }
 
 const initializeBreadcrumbs = function() {
@@ -105,7 +105,7 @@ async function initialize() {
     console.log("v"+getVersion());
     initializeBreadcrumbs();
 
-    // await initializePlansPage();
+    await initializePlansPage();
 
     await initializeDayPage();
 
