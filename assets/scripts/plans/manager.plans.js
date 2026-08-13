@@ -2,7 +2,7 @@
 import sessionStorageManager from "../storage/manager.storage.session.js";
 
 class Manager {
-    #plansDataPath = new URL("../../assets/data/plans/plans.json", import.meta.url).href;
+    #plansDataPath = "../../assets/data/plans/plans.json";
     #plans = null; // keep this immutable, and each inner element immutable as well
 
     async loadPlans() {
