@@ -17,7 +17,6 @@ class MealCardGenerator {
 
         if (meal.is_premium_meal) {
             card.classList.add("premium");
-            card.append(this.#generatePremiumItemTag(meal));
         }
 
         card.append(
@@ -36,13 +35,22 @@ class MealCardGenerator {
     }
 
     static #generateImage(meal) {
+        const container = document.createElement("div");
+        container.classList.add("img_container"); // Make sure this has position: relative;
+
         const img = document.createElement("img");
         img.classList.add("top_img");
         img.src = meal.img;
         img.alt = meal.name;
+        container.append(img);
 
-        return img;
+        if (meal.is_premium_meal) {
+            container.append(this.#generatePremiumItemTag(meal));
+        }
+
+        return container;
     }
+
 
     static #generateBody(meal) {
         const body = document.createElement("div");

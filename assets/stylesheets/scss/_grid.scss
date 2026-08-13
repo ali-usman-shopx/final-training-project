@@ -7,6 +7,7 @@ $breakpoint-xmd: 992px;
 $breakpoint-lg: 1025px;
 $breakpoint-xl: 1200px;
 $breakpoint-xxl: 1700px;
+$breakpoint-design: 1441px;
 
 .grid {
     display: grid;
@@ -153,4 +154,32 @@ $breakpoint-xxl: 1700px;
     .offset-xxl-9  { grid-column-start: 10; }
     .offset-xxl-10 { grid-column-start: 11; }
     .offset-xxl-11 { grid-column-start: 12; }
+}
+
+@media (min-width: $breakpoint-design) {
+    .col-design-1  { grid-column-end: span 1; }
+    .col-design-2  { grid-column-end: span 2; }
+    .col-design-3  { grid-column-end: span 3; }
+    .col-design-4  { grid-column-end: span 4; }
+    .col-design-5  { grid-column-end: span 5; }
+    .col-design-6  { grid-column-end: span 6; }
+    .col-design-7  { grid-column-end: span 7; }
+    .col-design-8  { grid-column-end: span 8; }
+    .col-design-9  { grid-column-end: span 9; }
+    .col-design-10 { grid-column-end: span 10; }
+    .col-design-11 { grid-column-end: span 11; }
+    .col-design-12 { grid-column-end: span 12; }
+
+    .offset-design-0  { grid-column-start: 1; }
+    .offset-design-1  { grid-column-start: 2; }
+    .offset-design-2  { grid-column-start: 3; }
+    .offset-design-3  { grid-column-start: 4; }
+    .offset-design-4  { grid-column-start: 5; }
+    .offset-design-5  { grid-column-start: 6; }
+    .offset-design-6  { grid-column-start: 7; }
+    .offset-design-7  { grid-column-start: 8; }
+    .offset-design-8  { grid-column-start: 9; }
+    .offset-design-9  { grid-column-start: 10; }
+    .offset-design-10 { grid-column-start: 11; }
+    .offset-design-11 { grid-column-start: 12; }
 }

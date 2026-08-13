@@ -17,12 +17,14 @@
     overflow-y: auto;
 
     .meal_card {
-        width: 258px;
+        // width: 258px;
+        width: 24%;
         display: flex;
         flex-direction: column;
 
         .top_img {
             width: 100%;
+            display: block;
         }
         .body {
             width: 100%;
@@ -92,6 +94,11 @@
                 border-color: black;
             }
 
+            .img_container {
+                position: relative;
+                height: fit-content;
+            }
+
             .premium_tag {
                 position: absolute;
                 background-color: colors.$accent-text;
@@ -99,7 +106,9 @@
                 padding-left: 11px;
                 padding-right: 10px;
                 height: 24px;
-                top: 141px;
+                // top: 141px;
+                bottom: 0px;
+                left: 0px;
             }
 
             .special_ingredients {
@@ -115,6 +124,10 @@
 @media (max-width: grid.$breakpoint-lg) {
     #meals_section_container {
         margin-right: 0px;
+
+        .meal_card {
+            width: 48%;
+        }
     }
 }
 

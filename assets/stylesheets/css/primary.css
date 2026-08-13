@@ -438,6 +438,80 @@
     grid-column-start: 12;
   }
 }
+@media (min-width: 1441px) {
+  .col-design-1 {
+    grid-column-end: span 1;
+  }
+  .col-design-2 {
+    grid-column-end: span 2;
+  }
+  .col-design-3 {
+    grid-column-end: span 3;
+  }
+  .col-design-4 {
+    grid-column-end: span 4;
+  }
+  .col-design-5 {
+    grid-column-end: span 5;
+  }
+  .col-design-6 {
+    grid-column-end: span 6;
+  }
+  .col-design-7 {
+    grid-column-end: span 7;
+  }
+  .col-design-8 {
+    grid-column-end: span 8;
+  }
+  .col-design-9 {
+    grid-column-end: span 9;
+  }
+  .col-design-10 {
+    grid-column-end: span 10;
+  }
+  .col-design-11 {
+    grid-column-end: span 11;
+  }
+  .col-design-12 {
+    grid-column-end: span 12;
+  }
+  .offset-design-0 {
+    grid-column-start: 1;
+  }
+  .offset-design-1 {
+    grid-column-start: 2;
+  }
+  .offset-design-2 {
+    grid-column-start: 3;
+  }
+  .offset-design-3 {
+    grid-column-start: 4;
+  }
+  .offset-design-4 {
+    grid-column-start: 5;
+  }
+  .offset-design-5 {
+    grid-column-start: 6;
+  }
+  .offset-design-6 {
+    grid-column-start: 7;
+  }
+  .offset-design-7 {
+    grid-column-start: 8;
+  }
+  .offset-design-8 {
+    grid-column-start: 9;
+  }
+  .offset-design-9 {
+    grid-column-start: 10;
+  }
+  .offset-design-10 {
+    grid-column-start: 11;
+  }
+  .offset-design-11 {
+    grid-column-start: 12;
+  }
+}
 @font-face {
   font-family: "Roboto";
   src: url("../../fonts/roboto-3/Roboto-Thin.ttf") format("truetype");
@@ -958,12 +1032,13 @@
   overflow-y: auto;
 }
 #meals_section_container .meal_card {
-  width: 258px;
+  width: 24%;
   display: flex;
   flex-direction: column;
 }
 #meals_section_container .meal_card .top_img {
   width: 100%;
+  display: block;
 }
 #meals_section_container .meal_card .body {
   width: 100%;
@@ -1024,6 +1099,10 @@
 #meals_section_container .meal_card.premium .body {
   border-color: black;
 }
+#meals_section_container .meal_card.premium .img_container {
+  position: relative;
+  height: fit-content;
+}
 #meals_section_container .meal_card.premium .premium_tag {
   position: absolute;
   background-color: #D75E33;
@@ -1031,7 +1110,8 @@
   padding-left: 11px;
   padding-right: 10px;
   height: 24px;
-  top: 141px;
+  bottom: 0px;
+  left: 0px;
 }
 #meals_section_container .meal_card.premium .special_ingredients {
   color: #FFFFFF !important;
@@ -1043,6 +1123,9 @@
 @media (max-width: 1025px) {
   #meals_section_container {
     margin-right: 0px;
+  }
+  #meals_section_container .meal_card {
+    width: 48%;
   }
 }
 @media (max-width: 768px) {
@@ -1417,6 +1500,11 @@
     border-radius: 0;
     border: none;
     box-shadow: none;
+  }
+}
+@media (min-width: 1441px) {
+  #cart_section_container {
+    width: 30% !important;
   }
 }
 .meals_page_container {
