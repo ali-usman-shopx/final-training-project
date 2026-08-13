@@ -89,7 +89,7 @@ const pseudoGateway = function() {
     let location = window.location.href.split("/");
     const current = location.pop();
 
-    if (!(current in pages)) {
+    if (!Object.values(pages).includes(current)) {
         navigateToLastValidPage(location);
         return;
     }
