@@ -38,7 +38,7 @@
     }
 
     .accent-text {
-        font: normal normal bold 16px/22px fonts.$roboto;
+        font: normal normal bold 16px/22px fonts.$fonts.$roboto;
     }
 
     #plan-cards-container {
@@ -47,12 +47,14 @@
         flex-wrap: wrap;
         overflow: wrap;
         justify-content: space-evenly;
+        column-gap: 16px;
     
         .plan-card {
             background-color: transparent;
             padding: 0px;
             position: relative;
-            width: clamp(167px, 22vw, 278px);
+            // width: clamp(167px, 22vw, 278px);
+            width: 24%;
             // height: clamp(216px, 25vw, 309px);
             margin-top: 34px;
             cursor: pointer;
@@ -120,7 +122,7 @@
     }
 
     .shipping-info {
-        font: normal normal normal 14px/20px Roboto;
+        font: normal normal normal 14px/20px fonts.$roboto;
         text-align: center;
         margin-top: 59px;
     }
@@ -137,7 +139,7 @@
         cursor: pointer;
         
         color: colors.$sharp-white-text;
-        font: normal normal bold 16px/25px Roboto;
+        font: normal normal bold 16px/25px fonts.$roboto;
         letter-spacing: 0px;
         text-align: center;
 
@@ -147,7 +149,32 @@
     .get-started-button:hover {
         width: 390px;
     }
-
+    
+    @media (max-width: grid.$breakpoint-lg) {
+        #plan-cards-container {
+            justify-content: center;
+            column-gap: 15px;
+        }
+        
+        #plan-cards-container .plan-card {
+            width: 38%;
+        }
+        
+        .shipping-info {
+            margin-top: 40px;
+        }
+        
+        .get-started-button {
+            width: 78%;
+            transition: none;
+            margin-bottom: 36px;
+        }
+        .get-started-button:hover {
+            width: 78%;
+        }
+    }
+    
+    // For Mobile
     @media (max-width: grid.$breakpoint-md) {
         .branding-row {
             margin-top: 30px;
@@ -165,54 +192,33 @@
         #plan-cards-container {
             justify-content: center;
             column-gap: 9px;
+            width: 100% !important;
+            
+            .plan-card {
+                width: 45% !important;
+                .special-text-pill {
+                    font-size: 11px !important;
+                    padding-left: 7px 2px 10px 4px !important;
+                }
+    
+                .card-title {
+                    font-size: 20px !important;
+                }
+            }
         }
 
-        .plan-card {
-            .special-text-pill {
-                font-size: 11px !important;
-                padding-left: 7px 2px 10px 4px !important;
-            }
-
-            .card-title {
-                font-size: 20px !important;
-            }
-        }
 
         .shipping-info {
             margin-top: 40px;
         }
 
         .get-started-button {
-            width: 342px;
+            width: 92%;
             transition: none;
             margin-bottom: 36px;
         }
         .get-started-button:hover {
-            width: 342px; // TODO this is slightly shorter than plan cards container (make container narrower)
-        }
-    }
-
-    @media (max-width: grid.$breakpoint-lg) {
-        #plan-cards-container {
-            justify-content: center;
-            column-gap: 15px;
-        }
-
-        .plan-card {
-            width: 38% !important;
-        }
-
-        .shipping-info {
-            margin-top: 40px;
-        }
-
-        .get-started-button {
-            width: 78%;
-            transition: none;
-            margin-bottom: 36px;
-        }
-        .get-started-button:hover {
-            width: 78%;
+            width: 92%; // TODO this is slightly shorter than plan cards container (make container narrower)
         }
     }
 }
