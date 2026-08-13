@@ -29,6 +29,10 @@ import {
     wirePromoFieldGeneration
 } from "./checkout/wirer.checkout.js"
 
+const getVersion = function() {
+    return "0.4.9";
+}
+
 const initializeBreadcrumbs = function() {
     wireBreadcrumbs();
 }
@@ -98,6 +102,7 @@ const initializeCheckoutPage = async function() {
 }
  
 async function initialize() {
+    console.log("v"+getVersion());
     initializeBreadcrumbs();
 
     await initializePlansPage();
