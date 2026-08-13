@@ -18,7 +18,7 @@ class PlanCardGenerator {
 
         const image = document.createElement("img");
         image.classList.add("top-img");
-        image.src = `./assets/images/plans/${plan.img}`;
+        image.src = `assets/images/plans/${plan.img}`;
         image.alt = `${plan.mealsCount} Meals`;
 
         card.appendChild(image);
