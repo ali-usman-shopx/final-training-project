@@ -74,7 +74,7 @@ const navigateToNextPage = function() {
     window.location.href = location.join("/");
 }
 
-const navigateToLastValidPage = function() {
+const navigateToLastValidPage = function(location) {
     let lastValidPage = pages.PLANS;
     
     for (const page of Object.values(pages)) {
@@ -90,13 +90,13 @@ const pseudoGateway = function() {
     const current = location.pop();
 
     if (!(current in pages)) {
-        navigateToLastValidPage();
+        navigateToLastValidPage(location);
         return;
     }
 
     if (validatePage(current)) return; // allow access
     
-    navigateToLastValidPage();
+    navigateToLastValidPage(location);
 }
 
 export {configureBreadcrumbs, navigateToNextPage, pseudoGateway, pages};
