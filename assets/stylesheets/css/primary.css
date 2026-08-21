@@ -752,7 +752,7 @@
 .plans_section_container .get-started-button:hover {
   width: 390px;
 }
-@media (max-width: 1025px) {
+@media (max-width: 1439px) {
   .plans_section_container #plan-cards-container {
     justify-content: center;
     column-gap: 15px;

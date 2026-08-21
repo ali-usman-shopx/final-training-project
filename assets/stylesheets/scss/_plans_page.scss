@@ -150,7 +150,7 @@
         width: 390px;
     }
     
-    @media (max-width: grid.$breakpoint-lg) {
+    @media (max-width: grid.$breakpoint-1440px) {
         #plan-cards-container {
             justify-content: center;
             column-gap: 15px;
